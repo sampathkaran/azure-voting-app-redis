@@ -8,4 +8,19 @@ pipeline {
             }
         }
     }
+
+    stages {
+        stage('Docker-image-build') {
+            steps {
+                sh 'docker images  -a '
+                
+                sh '''docker images  -a 
+                docker build -t jenkins-voting-image .
+                docker images -a
+                '''
+                
+            }
+        }
+    }
+    
 }
