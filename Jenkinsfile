@@ -7,7 +7,7 @@ pipeline {
                 sh 'echo "hello world"'
             }
         }
-    }
+    
 
     
         stage('Docker-image-build') {
@@ -21,6 +21,6 @@ pipeline {
                 
             }
         }
-    
+    }
     
 }
