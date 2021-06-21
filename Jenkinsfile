@@ -9,7 +9,7 @@ pipeline {
         }
     }
 
-    stages {
+    
         stage('Docker-image-build') {
             steps {
                 sh 'docker images  -a '
@@ -21,6 +21,6 @@ pipeline {
                 
             }
         }
-    }
+    
     
 }
