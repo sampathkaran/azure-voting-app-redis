@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Display Branch') {
+        stage('Display') {
             steps {
-                echo "$GIT_BRANCH"
+                sh 'echo "hello world"'
             }
         }
     }
