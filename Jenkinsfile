@@ -18,7 +18,31 @@ pipeline {
                 docker images  -a'''
                 
             }
+            
         }
+
+        stage('push image to dockerhub') {
+            steps {
+                
+                echo "workspace is $WORKSPACE"
+                dir('$WORKSPACE/azure-vote') {
+                // some block
+                script {
+                // some block
+                docker.withRegistry('https://hub.docker.com/', 'Dockerhub') {
+                def customImage = docker.build("voting-app:${env.BUILD_ID}")
+
+               /* Push the container to the custom Registry */
+                customImage.push()
+    }    
+}
+}
+                
+            }
+            
+        }
+
+         
     }
     
 }
